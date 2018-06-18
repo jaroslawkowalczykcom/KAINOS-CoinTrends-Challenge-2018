@@ -1,0 +1,35 @@
+.footer {
+  background-color: #333b41;
+  color: #fff;
+  font-size: 0.8em;
+  height: 45px;
+  padding-top: 8px;
+}
+
+.header {
+  background-color: #e9ecef;
+  color: #000;
+  height: 60px;
+}
+
+.green-line {
+  background-color: #09a94d;
+  color: #fff;
+  height: 5px;
+}
+
+.trends-arrow {
+  font-size: 0.7em;
+}
+
+#date1 {
+  font-weight: bold;
+}
+
+#date2 {
+  font-weight: bold;
+}
+
+#date3 {
+  font-weight: bold;
+}

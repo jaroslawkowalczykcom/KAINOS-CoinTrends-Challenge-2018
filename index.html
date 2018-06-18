@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CoinTrends Challenge 2018</title>
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+		<script src="js/chart_main.js"></script>
+
+		<!--Chartjs plugin annotation-->
+		<script src="js/chartjs-plugin-annotation.js"></script>
+
+		<!-- Date Picker -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <script src="js/bootstrap-datepicker.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row header">
+				<div class="col-md-2 col-sm-2 col-xs-12 text-left">
+					<a href="index.html"><img src="img/kainos-logo-sticky.png"></a>
+				</div>
+				<div class="col-md-10 col-sm-10 col-xs-12">
+				</div>
+			</div>
+			<div class="row green-line">
+				<div class="col text-left pt-3 pb-2">
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-3">
+			<div class="row">
+				<div class="col-md-8 col-sm-8 col-xs-12 text-left pl-3">
+					<h3>CoinTrends Challenge 2018</h3>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-12 mt-1">
+					<button type="button" onclick="hideShowTrend(false)" class="btn btn-info btn-sm btn-block"><i class="far fa-eye"></i> Show trends</button>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-12 mt-1">
+					<button type="button" onclick="hideShowTrend(true)" class="btn btn-info btn-sm btn-block"><i class="far fa-eye-slash"></i> Hide trends</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-1">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
+						</div>
+						<input type="text" id="setDateFrom" class="text-center form-control" placeholder="Choose date from" aria-label="Start date" aria-describedby="basic-addon1" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-today-highlight="true">
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
+						</div>
+						<input type="text" id="setDateTo" class="text-center form-control" placeholder="Choose date to" aria-label="End date" aria-describedby="basic-addon1" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" data-date-today-highlight="true">
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-12">
+					<button id="button" type="button" onclick="setDate()" class="btn btn-success btn-sm btn-block"><i class="fas fa-check"></i> Set the date</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-12 col-sm-12 col-xs-12">
+					<div id="graph-container" style="width: 100%">
+						<canvas id="lineChart"></canvas>
+					</div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="container">
+			<div class="row mt-3 text-center">
+				<div class="col-md-1 col-sm-1 col-xs-12">
+					<img id="arrow1" src="" alt="" width="50px" height="50px" />
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 trends-arrow">
+					<div id="date1"></div>
+					<p id='alert1'></p>
+				</div>
+				<div class="col-md-1 col-sm-1 col-xs-12">
+					<img id="arrow2" src="" alt="" width="50px" height="50px" />
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 trends-arrow">
+					<div id="date2"></div>
+					<p id='alert2'></p>
+				</div>
+				<div class="col-md-1 col-sm-1 col-xs-12">
+					<img id="arrow3" src="" alt="" width="50px" height="50px" />
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 trends-arrow">
+					<div id="date3"></div>
+					<p id='alert3'></p>
+				</div>
+			</div>
+    </div>
+
+		<div class="container text-center mt-2 footer">
+			<div class="row">
+				<div class="col">
+					<p>Copyright &copy 2018 by Kainos & Jarosław Kowalczyk</p>
+				</div>
+			</div>
+		</div>
+
+
+	<!-- DatePicker -->
+	<script type="text/javascript">
+	    $('.datepicker').datepicker();
+	</script>
+
+	</body>
+</html>
